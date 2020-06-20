@@ -47,7 +47,9 @@
     </form>
     <div class="journey">
         <p>Your total gold is: {{request.session.gold_total}}</p>
-        <p class={{request.session.style}}>{{request.session.results}}</p>
+        {% for log in request.session.results reversed%}
+            <p class={{request.session.style}}>{{log}}</p>
+        {% endfor %}
     </div>
 </body>
 </html>
