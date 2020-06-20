@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    h1{
+        color: salmon;
+    }
+    .add_remove{
+        border: 3px solid black;
+        padding: 10px;
+        margin: 20px;
+        display: inline-block;
+        width: 20%;
+        background-color: gray;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .more{
+        color: green;
+    }
+
+    .less{
+        color: red;
+    }
+    

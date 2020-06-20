@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <h1>Your Gold:</h1>
+    <div class="add_remove">
+        <h2>Farm</h2>
+        <p>(earns 10-20 gold)</p>
+        <form action="/process_money" method="POST">
+            {%csrf_token%}
+            <input type="submit" name="gold" value="Work the Farm">
+        </form>
+    </div>
+    <div class="add_remove">
+        <h2>Cave</h2>
+        <p>(earns 5-10 gold)</p>
+        <form action="/process_money" method="POST">
+            {%csrf_token%}
+            <input type="submit" name='gold' value="Search the Cave">
+        </form>
+    </div>
+    <div class="add_remove">
+        <h2>House</h2>
+        <p>(earns 2-5 gold)</p>
+        <form action="/process_money" method="POST">
+            {%csrf_token%}
+            <input type="submit" name="gold" value="Search the House">
+        </form>
+    </div>
+    <div class="add_remove">
+        <h2>Casino</h2>
+        <p>(earns/takes 0-50 gold)</p>
+        <form action="/process_money" method="POST">
+            {%csrf_token%}
+            <input type="submit" name="gold" value="Go to Casino">
+        </form>
+    </div>
+    <form action="/process_money" method="POST">
+        {%csrf_token%}
+        <input type="submit" name="gold" value="Reset Game">
+    </form>
+    <div class="journey">
+        <p>Your total gold is: {{request.session.gold_total}}</p>
+        <p class={{request.session.style}}>{{request.session.results}}</p>
+    </div>
+</body>
+</html>
